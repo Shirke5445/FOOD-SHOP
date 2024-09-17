@@ -86,18 +86,21 @@ const setItemToCart = () => {
         <div className="row justify-content-start mt-5">
           {product?.images?.map((img, index) => (
             <div key={index} className="col-2 ms-4 mt-2">
-              <a role="button">
-                <img
-                  className={`d-block border rounded p-3 cursor-pointer ${
-                    img.url === activeImg ? 'border-warning' : ''
-                  }`}
-                  height="100"
-                  width="100"
-                  src={img?.url}
-                  alt={img?.url}
-                  onClick={() => setActiveImg(img.url)}
-                />
-              </a>
+              <button
+  type="button"
+  className={`d-block border rounded p-3 cursor-pointer ${
+    img.url === activeImg ? 'border-warning' : ''
+  }`}
+  onClick={() => setActiveImg(img.url)}
+  style={{ background: 'none', border: 'none' }}
+>
+  <img
+    height="100"
+    width="100"
+    src={img?.url}
+    alt={img?.url}
+  />
+</button>
             </div>
           ))}
         </div>
